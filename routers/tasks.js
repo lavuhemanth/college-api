@@ -51,7 +51,7 @@ router.delete("/:id", async (req, res) => {
 });
 
 router.put("/:id", async (req, res) => {
-  console.log("REquest params ", req.params);
+  // console.log("REquest params ", req.params);
 
   try {
     const data = await Task.findById(req.params.id);
