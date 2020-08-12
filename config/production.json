@@ -1,0 +1,9 @@
+{
+  "name": "College-data",
+  "mail": {
+    "host": "College-data-mail-server-production",
+    "password": "app_password"
+  },
+  "mongoURL": "mongodb://heroku_m8fx080r:t86demsn7l7ua992s5v4s2upk0@ds061076.mlab.com:61076/heroku_m8fx080r",
+  "jwtPrivateKey": ""
+}

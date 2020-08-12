@@ -1,0 +1,9 @@
+{
+  "name": "College-data",
+  "mail": {
+    "host": "College-data-mail-server-development",
+    "password": "app_password"
+  },
+  "mongoURL": "mongodb://localhost/gallery",
+  "jwtPrivateKey": ""
+}

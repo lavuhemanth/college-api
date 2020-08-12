@@ -1,0 +1,5 @@
+{
+  "name": "College-data",
+  "mongoURL": "mongodb://localhost/gallery",
+  "jwtPrivateKey": ""
+}
