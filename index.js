@@ -10,6 +10,13 @@ const app = express();
 app.use(express.json());
 
 app.use(function (req, res, next) {
+  process.on("unhandledRejection", (error) => {
+    throw new Error("error");
+  });
+  next();
+});
+
+app.use(function (req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
   res.header(
     "Access-Control-Allow-Headers",
