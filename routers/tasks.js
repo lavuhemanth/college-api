@@ -67,9 +67,11 @@ router.put("/:id", async (req, res) => {
             $addToSet: { students: req.body.students },
           },
         },
-        { new: true }
+        { new: true },
+        function (error) {
+          console.log("in update :: <<>> ", error);
+        }
       );
-      console.log("Result :: ", result);
       res.send(result);
     } else {
       throw new Error("Document not found!");

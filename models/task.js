@@ -29,6 +29,7 @@ const taskScheme = new mongoose.Schema({
   code: {
     type: String,
     required: true,
+    unique: true,
   },
   location: {
     type: String,
