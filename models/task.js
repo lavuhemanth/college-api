@@ -1,26 +1,26 @@
 const mongoose = require("mongoose");
 
-const studentSchema = new mongoose.Schema({
-  name: {
-    type: String,
-    required: true,
-  },
-  rollId: {
-    type: String,
-    required: true,
-  },
-  branch: {
-    type: String,
-    required: true,
-  },
-  section: {
-    type: String,
-    required: true,
-  },
-  pic: {
-    type: String,
-  },
-});
+// const studentSchema = new mongoose.Schema({
+//   name: {
+//     type: String,
+//     required: true,
+//   },
+//   rollId: {
+//     type: String,
+//     required: true,
+//   },
+//   branch: {
+//     type: String,
+//     required: true,
+//   },
+//   section: {
+//     type: String,
+//     required: true,
+//   },
+//   pic: {
+//     type: String,
+//   },
+// });
 const taskScheme = new mongoose.Schema({
   name: {
     type: String,
@@ -39,7 +39,8 @@ const taskScheme = new mongoose.Schema({
     required: true,
   },
   students: {
-    type: [studentSchema],
+    type: Array,
+    default: [],
   },
 });
 

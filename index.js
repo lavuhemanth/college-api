@@ -11,7 +11,7 @@ app.use(express.json());
 
 app.use(function (req, res, next) {
   process.on("unhandledRejection", (error) => {
-    throw new Error("error");
+    console.log(error);
   });
   next();
 });
@@ -46,6 +46,8 @@ mongoose
   .connect(mongoURL, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
+    useFindAndModify: false,
+    useCreateIndex: true,
   })
   .then(() => console.log("DB connected ...!"))
   .catch((err) => console.log("!---- Connection ERROR ----!"));
