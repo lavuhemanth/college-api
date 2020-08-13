@@ -56,10 +56,9 @@ router.put("/:id", async (req, res) => {
   try {
     const data = await Task.findById(req.params.id);
     if (data) {
-      const result = await Task.findByOneAndUpdate(
-        { _id: req.params.id },
-        req.body
-      );
+      const result = await Task.findByIdAndUpdate(req.params.id, {
+        ...req.body,
+      });
       res.send({
         task: result,
       });
