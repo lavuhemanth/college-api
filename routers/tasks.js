@@ -5,12 +5,17 @@ const router = express.Router();
 
 router.post("/", async (req, res) => {
   try {
+    var ip = (req.headers['x-forwarded-for'] || '').split(',').pop().trim() || 
+         req.connection.remoteAddress || 
+         req.socket.remoteAddress || 
+         req.connection.socket.remoteAddress
+    
     const task = new Task({
       ...req.body,
     });
 
     const result = await task.save();
-    res.send({ task: result });
+    res.send({ task: ip });
   } catch (ex) {
     throw ex;
   }
